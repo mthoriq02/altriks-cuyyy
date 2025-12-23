@@ -36,6 +36,7 @@ def perkalian_matriks(A, B):
         # jika jumlah kolom matriks A sama dengan jumlah baris matriks B
         if A.shape[1] == B.shape[0]:
             C = A.dot(B)
+            return C
 
         # jika jumlah kolom matriks A tidak sama dengan jumlah baris matriks B
         elif A.shape[1] != B.shape[0]:
@@ -44,7 +45,6 @@ def perkalian_matriks(A, B):
     except ValueError:
         print("Dimensi matriks tidak sama")
 
-    return C
 
 def perkalian_skalar(A, B):
     C = A * B
@@ -81,7 +81,7 @@ os.system('cls')
 print(f"PERKALIAN MATRIKS".center(25, "="), "\n")
 
 X = np.array([[9, 2, -5]])
-Y = np.array([[3, -5, 10]])
+Y = np.array([[3], [-5], [10]])
 Z = perkalian_matriks(X, Y)
 
 print(Z)
